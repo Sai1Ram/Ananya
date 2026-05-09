@@ -4,12 +4,12 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const galleryImages = [
-  { id: 1, span: "col-span-1 row-span-2" },
-  { id: 2, span: "col-span-1 row-span-1" },
-  { id: 3, span: "col-span-1 row-span-1" },
-  { id: 4, span: "col-span-1 row-span-1" },
-  { id: 5, span: "col-span-1 row-span-2" },
-  { id: 6, span: "col-span-1 row-span-1" },
+  { id: 1, span: "col-span-1 row-span-2", image: "/gallery/real-bridal-1.jpg", title: "Bridal Makeup" },
+  { id: 2, span: "col-span-1 row-span-1", image: "/gallery/real-bridal-3.jpg", title: "Elegant Bride" },
+  { id: 3, span: "col-span-1 row-span-1", image: "/gallery/real-party-1.jpg", title: "Party Glam" },
+  { id: 4, span: "col-span-1 row-span-1", image: "/gallery/real-hair-1.jpg", title: "Hair Styling" },
+  { id: 5, span: "col-span-1 row-span-2", image: "/gallery/real-makeup-1.jpg", title: "Traditional" },
+  { id: 6, span: "col-span-1 row-span-1", image: "/gallery/real-makeup-2.webp", title: "South Indian" },
 ]
 
 export default function GallerySection() {
@@ -44,24 +44,18 @@ export default function GallerySection() {
               viewport={{ once: true }}
               className={`${image.span} relative group overflow-hidden border border-[#2a2a2a]`}
             >
-              {/* Placeholder with gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#111]">
-                {/* Decorative pattern */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-[#C9A84C]/10 font-serif text-6xl">✦</div>
-                </div>
-                
-                {/* Image placeholder text */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-[#a8a8a8] opacity-50 group-hover:opacity-0 transition-opacity duration-300">
-                  <CameraIcon className="w-8 h-8 mb-2" />
-                  <span className="text-xs">Bridal Look {image.id}</span>
-                </div>
-              </div>
+              {/* Image */}
+              <Image
+                src={image.image}
+                alt={image.title}
+                fill
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+              />
 
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-[#F5F0E8] font-serif text-lg">Bridal Elegance</p>
+                  <p className="text-[#F5F0E8] font-serif text-lg">{image.title}</p>
                   <p className="text-[#C9A84C] text-sm">View Details</p>
                 </div>
               </div>
@@ -77,7 +71,7 @@ export default function GallerySection() {
           ))}
         </div>
 
-        {/* Instagram CTA */}
+        {/* Gallery CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,30 +79,37 @@ export default function GallerySection() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <p className="text-[#a8a8a8] mb-4">
-            Follow us for more inspiration
+          <p className="text-[#a8a8a8] mb-6">
+            Explore our complete gallery of happy customers
           </p>
-          <a
-            href="https://www.instagram.com/ananyabeautyspa"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#C9A84C] hover:text-[#E8C96A] transition-colors duration-300"
-          >
-            <InstagramIcon className="w-5 h-5" />
-            <span className="font-medium">@ananyabeautyspa</span>
-          </a>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="/gallery"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#C9A84C] text-[#0a0a0a] hover:bg-[#E8C96A] transition-all duration-300 group"
+            >
+              <span className="font-medium tracking-wide">View Full Gallery</span>
+              <svg 
+                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/ananyabeautyspa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-4 border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#0a0a0a] transition-colors duration-300"
+            >
+              <InstagramIcon className="w-5 h-5" />
+              <span className="font-medium">@ananyabeautyspa</span>
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
-  )
-}
-
-function CameraIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-    </svg>
   )
 }
 
