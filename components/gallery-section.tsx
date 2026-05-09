@@ -4,12 +4,12 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const galleryImages = [
-  { id: 1, span: "col-span-1 row-span-2", image: "/gallery/bridal-1.jpg", title: "Bridal Makeup" },
-  { id: 2, span: "col-span-1 row-span-1", image: "/gallery/bridal-2.jpg", title: "Bridal Look" },
-  { id: 3, span: "col-span-1 row-span-1", image: "/gallery/makeup-1.jpg", title: "Party Makeup" },
-  { id: 4, span: "col-span-1 row-span-1", image: "/gallery/hair-1.jpg", title: "Hair Styling" },
-  { id: 5, span: "col-span-1 row-span-2", image: "/gallery/engagement-1.jpg", title: "Engagement" },
-  { id: 6, span: "col-span-1 row-span-1", image: "/gallery/skincare-1.jpg", title: "Facial" },
+  { id: 1, span: "col-span-1 row-span-2", image: "/gallery/real-bridal-1.jpg", title: "Bridal Makeup" },
+  { id: 2, span: "col-span-1 row-span-1", image: "/gallery/real-bridal-3.jpg", title: "Elegant Bride" },
+  { id: 3, span: "col-span-1 row-span-1", image: "/gallery/real-party-1.jpg", title: "Party Glam" },
+  { id: 4, span: "col-span-1 row-span-1", image: "/gallery/real-hair-1.jpg", title: "Hair Styling" },
+  { id: 5, span: "col-span-1 row-span-2", image: "/gallery/real-makeup-1.jpg", title: "Traditional" },
+  { id: 6, span: "col-span-1 row-span-1", image: "/gallery/real-makeup-2.webp", title: "South Indian" },
 ]
 
 export default function GallerySection() {
