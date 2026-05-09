@@ -49,7 +49,7 @@ export default function GallerySection() {
                 src={image.image}
                 alt={image.title}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
               />
 
               {/* Hover overlay */}

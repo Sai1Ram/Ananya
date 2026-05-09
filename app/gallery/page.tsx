@@ -199,7 +199,7 @@ export default function GalleryPage() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
                   />
                   
                   {/* Category tag */}
