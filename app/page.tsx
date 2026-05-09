@@ -2,10 +2,8 @@ import Navbar from "@/components/navbar"
 import HeroSection from "@/components/hero-section"
 import AboutSection from "@/components/about-section"
 import ServicesSection from "@/components/services-section"
-import BridalSection from "@/components/bridal-section"
 import GallerySection from "@/components/gallery-section"
 import WhyChooseSection from "@/components/why-choose-section"
-import TestimonialsSection from "@/components/testimonials-section"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 
@@ -16,10 +14,8 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
-      <BridalSection />
       <GallerySection />
       <WhyChooseSection />
-      <TestimonialsSection />
       <ContactSection />
       <Footer />
     </main>

@@ -77,7 +77,7 @@ export default function GallerySection() {
           ))}
         </div>
 
-        {/* Instagram CTA */}
+        {/* Gallery CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,18 +85,34 @@ export default function GallerySection() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <p className="text-[#a8a8a8] mb-4">
-            Follow us for more inspiration
+          <p className="text-[#a8a8a8] mb-6">
+            Explore our complete gallery of happy customers
           </p>
-          <a
-            href="https://www.instagram.com/ananyabeautyspa"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#C9A84C] hover:text-[#E8C96A] transition-colors duration-300"
-          >
-            <InstagramIcon className="w-5 h-5" />
-            <span className="font-medium">@ananyabeautyspa</span>
-          </a>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="/gallery"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#C9A84C] text-[#0a0a0a] hover:bg-[#E8C96A] transition-all duration-300 group"
+            >
+              <span className="font-medium tracking-wide">View Full Gallery</span>
+              <svg 
+                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/ananyabeautyspa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-4 border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#0a0a0a] transition-colors duration-300"
+            >
+              <InstagramIcon className="w-5 h-5" />
+              <span className="font-medium">@ananyabeautyspa</span>
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
