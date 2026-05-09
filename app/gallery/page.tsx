@@ -19,15 +19,17 @@ const galleryItems = [
   {
     id: 1,
     category: "bridal",
-    title: "Traditional Bridal Look",
+    title: "Traditional Bridal Makeup",
     description: "Beautiful bridal makeup with traditional jewelry",
+    image: "/gallery/bridal-1.jpg",
     span: "col-span-1 md:col-span-2 row-span-2",
   },
   {
     id: 2,
     category: "bridal",
-    title: "South Indian Bride",
-    description: "Elegant South Indian bridal makeover",
+    title: "Radiant Bridal Look",
+    description: "Elegant bridal makeover with perfect glow",
+    image: "/gallery/bridal-2.jpg",
     span: "col-span-1 row-span-1",
   },
   {
@@ -35,6 +37,7 @@ const galleryItems = [
     category: "makeup",
     title: "Party Glam",
     description: "Stunning party makeup look",
+    image: "/gallery/makeup-1.jpg",
     span: "col-span-1 row-span-1",
   },
   {
@@ -42,41 +45,47 @@ const galleryItems = [
     category: "hair",
     title: "Bridal Hairstyle",
     description: "Intricate bridal hair bun with flowers",
+    image: "/gallery/hair-1.jpg",
     span: "col-span-1 row-span-2",
   },
   {
     id: 5,
     category: "bridal",
-    title: "Reception Look",
-    description: "Glamorous reception makeup",
+    title: "Mehndi Design",
+    description: "Beautiful bridal mehndi artwork",
+    image: "/gallery/bridal-3.jpg",
     span: "col-span-1 row-span-1",
   },
   {
     id: 6,
     category: "makeup",
-    title: "Natural Glow",
-    description: "Fresh and dewy makeup look",
+    title: "HD Makeup",
+    description: "Professional HD makeup application",
+    image: "/gallery/makeup-2.jpg",
     span: "col-span-1 row-span-1",
   },
   {
     id: 7,
     category: "hair",
     title: "Keratin Treatment",
-    description: "Silky smooth hair after treatment",
+    description: "Silky smooth hair after keratin treatment",
+    image: "/gallery/hair-2.jpg",
     span: "col-span-1 md:col-span-2 row-span-1",
   },
   {
     id: 8,
     category: "skincare",
-    title: "Facial Glow",
-    description: "Radiant skin after gold facial",
+    title: "Luxury Facial",
+    description: "Relaxing facial treatment at our spa",
+    image: "/gallery/skincare-1.jpg",
     span: "col-span-1 row-span-1",
   },
   {
     id: 9,
-    category: "bridal",
-    title: "Haldi Ceremony",
-    description: "Beautiful haldi ceremony makeup",
+    category: "skincare",
+    title: "Glowing Skin",
+    description: "Radiant skin after facial treatment",
+    image: "/gallery/skincare-2.jpg",
     span: "col-span-1 row-span-1",
   },
   {
@@ -84,41 +93,23 @@ const galleryItems = [
     category: "makeup",
     title: "Engagement Look",
     description: "Elegant engagement makeup",
+    image: "/gallery/engagement-1.jpg",
     span: "col-span-1 row-span-2",
   },
   {
     id: 11,
-    category: "hair",
-    title: "Hair Coloring",
-    description: "Balayage hair coloring",
+    category: "skincare",
+    title: "Nail Art",
+    description: "Beautiful manicure with nail art",
+    image: "/gallery/manicure-1.jpg",
     span: "col-span-1 row-span-1",
   },
   {
     id: 12,
-    category: "skincare",
-    title: "De-Tan Treatment",
-    description: "Before and after de-tan treatment",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 13,
     category: "bridal",
-    title: "Bengali Bride",
-    description: "Traditional Bengali bridal look",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 14,
-    category: "makeup",
-    title: "Smokey Eyes",
-    description: "Dramatic smokey eye makeup",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 15,
-    category: "hair",
-    title: "Hair Spa",
-    description: "Deep conditioning hair spa",
+    title: "Our Salon",
+    description: "Premium salon ambiance",
+    image: "/gallery/salon-1.jpg",
     span: "col-span-1 md:col-span-2 row-span-1",
   },
 ]
@@ -219,16 +210,17 @@ export default function GalleryPage() {
                   className={`${item.span} relative group cursor-pointer overflow-hidden border border-[#2a2a2a]`}
                   onClick={() => setSelectedImage(item)}
                 >
-                  {/* Gradient placeholder */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#111]">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-[#C9A84C]/10 font-serif text-6xl">✦</div>
-                    </div>
-                    
-                    {/* Category tag */}
-                    <div className="absolute top-3 left-3 px-2 py-1 bg-[#0a0a0a]/80 border border-[#C9A84C]/30 text-[#C9A84C] text-xs tracking-wider uppercase">
-                      {item.category}
-                    </div>
+                  {/* Image */}
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  
+                  {/* Category tag */}
+                  <div className="absolute top-3 left-3 z-10 px-2 py-1 bg-[#0a0a0a]/80 border border-[#C9A84C]/30 text-[#C9A84C] text-xs tracking-wider uppercase">
+                    {item.category}
                   </div>
 
                   {/* Hover overlay */}
@@ -281,12 +273,14 @@ export default function GalleryPage() {
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Image placeholder */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#1a1a1a] via-[#0a0a0a] to-[#111] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-[#C9A84C]/20 font-serif text-8xl mb-4">✦</div>
-                  <p className="text-[#C9A84C]/50 text-sm">Image Placeholder</p>
-                </div>
+              {/* Image */}
+              <div className="relative aspect-[4/3] bg-[#111]">
+                <Image
+                  src={selectedImage.image}
+                  alt={selectedImage.title}
+                  fill
+                  className="object-contain"
+                />
               </div>
 
               {/* Info bar */}
