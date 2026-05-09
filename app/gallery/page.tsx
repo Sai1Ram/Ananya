@@ -22,7 +22,6 @@ const galleryItems = [
     title: "Traditional Red Bridal Look",
     description: "Stunning bridal makeup with traditional red saree and heavy gold jewelry",
     image: "/gallery/real-bridal-1.jpg",
-    span: "col-span-1 md:col-span-2 row-span-2",
   },
   {
     id: 2,
@@ -30,7 +29,6 @@ const galleryItems = [
     title: "Elegant Pink Bride",
     description: "Beautiful bridal look in pink lehenga with delicate jewelry",
     image: "/gallery/real-bridal-3.jpg",
-    span: "col-span-1 row-span-1",
   },
   {
     id: 3,
@@ -38,7 +36,6 @@ const galleryItems = [
     title: "Glamorous Party Look",
     description: "Dramatic smokey eyes with bold lips and pearl accessories",
     image: "/gallery/real-party-1.jpg",
-    span: "col-span-1 row-span-1",
   },
   {
     id: 4,
@@ -46,7 +43,6 @@ const galleryItems = [
     title: "Curly Hair Styling",
     description: "Beautiful curls with tiara for a royal look",
     image: "/gallery/real-hair-1.jpg",
-    span: "col-span-1 row-span-2",
   },
   {
     id: 5,
@@ -54,7 +50,6 @@ const galleryItems = [
     title: "Royal Bridal Attire",
     description: "Traditional red bridal lehenga with intricate embroidery",
     image: "/gallery/real-bridal-4.jpg",
-    span: "col-span-1 row-span-1",
   },
   {
     id: 6,
@@ -62,7 +57,6 @@ const galleryItems = [
     title: "South Indian Elegance",
     description: "Classic South Indian makeup with green silk saree",
     image: "/gallery/real-makeup-2.webp",
-    span: "col-span-1 row-span-1",
   },
   {
     id: 7,
@@ -70,7 +64,6 @@ const galleryItems = [
     title: "Traditional Bridal Portrait",
     description: "Beautiful bride with lotus flower and traditional jewelry",
     image: "/gallery/real-makeup-1.jpg",
-    span: "col-span-1 md:col-span-2 row-span-1",
   },
   {
     id: 8,
@@ -78,7 +71,6 @@ const galleryItems = [
     title: "Red Bridal Lehenga",
     description: "Gorgeous bride in embroidered red bridal outfit",
     image: "/gallery/real-bridal-2.jpg",
-    span: "col-span-1 row-span-1",
   },
   {
     id: 9,
@@ -86,7 +78,6 @@ const galleryItems = [
     title: "Casual Elegance",
     description: "Natural party makeup with pink saree",
     image: "/gallery/real-party-2.jpg",
-    span: "col-span-1 row-span-1",
   },
   {
     id: 10,
@@ -94,7 +85,6 @@ const galleryItems = [
     title: "Traditional Celebration",
     description: "Beautiful traditional look for special occasions",
     image: "/gallery/real-traditional-1.jpg",
-    span: "col-span-1 row-span-2",
   },
 ]
 
@@ -175,13 +165,10 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Gallery Grid */}
+      {/* Gallery Grid - Masonry Layout */}
       <section className="py-16 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            layout
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px] md:auto-rows-[200px]"
-          >
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
             <AnimatePresence mode="popLayout">
               {filteredItems.map((item, index) => (
                 <motion.div
@@ -191,15 +178,16 @@ export default function GalleryPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className={`${item.span} relative group cursor-pointer overflow-hidden border border-[#2a2a2a]`}
+                  className="relative group cursor-pointer overflow-hidden border border-[#2a2a2a] break-inside-avoid mb-4"
                   onClick={() => setSelectedImage(item)}
                 >
-                  {/* Image */}
+                  {/* Image - using natural aspect ratio */}
                   <Image
                     src={item.image}
                     alt={item.title}
-                    fill
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                    width={600}
+                    height={800}
+                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                   
                   {/* Category tag */}
@@ -208,10 +196,10 @@ export default function GalleryPage() {
                   </div>
 
                   {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
                     <div className="absolute bottom-0 left-0 right-0 p-4">
                       <p className="text-[#F5F0E8] font-serif text-lg mb-1">{item.title}</p>
-                      <p className="text-[#a8a8a8] text-sm">{item.description}</p>
+                      <p className="text-[#a8a8a8] text-sm line-clamp-2">{item.description}</p>
                     </div>
                   </div>
 
@@ -223,11 +211,11 @@ export default function GalleryPage() {
                   </div>
 
                   {/* Border glow on hover */}
-                  <div className="absolute inset-0 border border-[#C9A84C] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 border border-[#C9A84C] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                 </motion.div>
               ))}
             </AnimatePresence>
-          </motion.div>
+          </div>
         </div>
       </section>
 

@@ -4,12 +4,12 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const galleryImages = [
-  { id: 1, span: "col-span-1 row-span-2", image: "/gallery/real-bridal-1.jpg", title: "Bridal Makeup" },
-  { id: 2, span: "col-span-1 row-span-1", image: "/gallery/real-bridal-3.jpg", title: "Elegant Bride" },
-  { id: 3, span: "col-span-1 row-span-1", image: "/gallery/real-party-1.jpg", title: "Party Glam" },
-  { id: 4, span: "col-span-1 row-span-1", image: "/gallery/real-hair-1.jpg", title: "Hair Styling" },
-  { id: 5, span: "col-span-1 row-span-2", image: "/gallery/real-makeup-1.jpg", title: "Traditional" },
-  { id: 6, span: "col-span-1 row-span-1", image: "/gallery/real-makeup-2.webp", title: "South Indian" },
+  { id: 1, image: "/gallery/real-bridal-1.jpg", title: "Bridal Makeup" },
+  { id: 2, image: "/gallery/real-bridal-3.jpg", title: "Elegant Bride" },
+  { id: 3, image: "/gallery/real-party-1.jpg", title: "Party Glam" },
+  { id: 4, image: "/gallery/real-hair-1.jpg", title: "Hair Styling" },
+  { id: 5, image: "/gallery/real-makeup-1.jpg", title: "Traditional" },
+  { id: 6, image: "/gallery/real-makeup-2.webp", title: "South Indian" },
 ]
 
 export default function GallerySection() {
@@ -33,8 +33,8 @@ export default function GallerySection() {
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent mx-auto" />
         </motion.div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
+        {/* Gallery Grid - Masonry Layout */}
+        <div className="columns-2 md:columns-3 gap-4 space-y-4">
           {galleryImages.map((image, index) => (
             <motion.div
               key={image.id}
@@ -42,14 +42,15 @@ export default function GallerySection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`${image.span} relative group overflow-hidden border border-[#2a2a2a]`}
+              className="relative group overflow-hidden border border-[#2a2a2a] break-inside-avoid mb-4"
             >
-              {/* Image */}
+              {/* Image - using natural aspect ratio */}
               <Image
                 src={image.image}
                 alt={image.title}
-                fill
-                className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                width={400}
+                height={500}
+                className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
               />
 
               {/* Hover overlay */}
@@ -66,7 +67,7 @@ export default function GallerySection() {
               </div>
 
               {/* Border glow on hover */}
-              <div className="absolute inset-0 border border-[#C9A84C] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 border border-[#C9A84C] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </motion.div>
           ))}
         </div>
