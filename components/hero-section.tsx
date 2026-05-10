@@ -116,7 +116,7 @@ export default function HeroSection() {
         >
           <button
             onClick={() => setBookingOpen(true)}
-            className="inline-flex items-center gap-3 bg-[#C9A84C] text-[#0a0a0a] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#E8C96A] transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 bg-[#C9A84C] text-[#0a0a0a] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#E8C96A] transition-all duration-300 hover:scale-105 gold-glow"
           >
             <CalendarIcon className="w-6 h-6" />
             Book an Appointment
