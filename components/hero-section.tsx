@@ -129,30 +129,46 @@ export default function HeroSection() {
         <BookingModal open={bookingOpen} onOpenChange={setBookingOpen} />
       </div>
 
-      {/* Scroll indicator - positioned outside content div */}
+      {/* Scroll indicator - creative golden ring design */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2"
-        >
-          <span className="text-[#C9A84C]/60 text-xs tracking-widest uppercase">Scroll</span>
-          <div className="flex flex-col items-center gap-1">
-            <motion.div 
-              animate={{ opacity: [0.3, 1, 0.3] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-px h-4 bg-gradient-to-b from-[#C9A84C] to-transparent"
+        <a href="#services" className="group flex flex-col items-center gap-3 cursor-pointer">
+          {/* Outer rotating ring */}
+          <div className="relative w-14 h-14 flex items-center justify-center">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 rounded-full border border-dashed border-[#C9A84C]/40"
             />
-            <svg className="w-4 h-4 text-[#C9A84C]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
+            {/* Inner pulsing circle */}
+            <motion.div
+              animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.8, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-2 rounded-full border border-[#C9A84C]/60"
+            />
+            {/* Bouncing arrow */}
+            <motion.div
+              animate={{ y: [0, 4, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <svg className="w-5 h-5 text-[#C9A84C] group-hover:text-[#E8C96A] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </motion.div>
           </div>
-        </motion.div>
+          {/* Label */}
+          <motion.span 
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="text-[#C9A84C]/80 text-xs tracking-[0.2em] uppercase font-medium group-hover:text-[#E8C96A] transition-colors"
+          >
+            Discover More
+          </motion.span>
+        </a>
       </motion.div>
     </section>
   )
