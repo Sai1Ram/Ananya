@@ -127,23 +127,33 @@ export default function HeroSection() {
 
         {/* Booking Modal */}
         <BookingModal open={bookingOpen} onOpenChange={setBookingOpen} />
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-[#C9A84C] rounded-full flex justify-center pt-2"
-          >
-            <motion.div className="w-1.5 h-1.5 bg-[#C9A84C] rounded-full" />
-          </motion.div>
-        </motion.div>
       </div>
+
+      {/* Scroll indicator - positioned outside content div */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-2"
+        >
+          <span className="text-[#C9A84C]/60 text-xs tracking-widest uppercase">Scroll</span>
+          <div className="flex flex-col items-center gap-1">
+            <motion.div 
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-px h-4 bg-gradient-to-b from-[#C9A84C] to-transparent"
+            />
+            <svg className="w-4 h-4 text-[#C9A84C]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
