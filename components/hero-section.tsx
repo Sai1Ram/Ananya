@@ -1,42 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import BookingModal from "@/components/booking-modal"
 
-function Particle({ delay, left }: { delay: number; left: number }) {
-  return (
-    <motion.div
-      className="absolute w-2 h-2 rounded-full bg-gradient-to-br from-[#C9A84C] to-[#E8C96A]"
-      style={{ left: `${left}%`, bottom: "-10px" }}
-      initial={{ y: 0, opacity: 0 }}
-      animate={{
-        y: [-10, -800],
-        opacity: [0, 1, 1, 0],
-        rotate: [0, 360],
-      }}
-      transition={{
-        duration: 8 + Math.random() * 4,
-        delay: delay,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-    />
-  )
-}
-
 export default function HeroSection() {
-  const [particles, setParticles] = useState<{ id: number; delay: number; left: number }[]>([])
   const [bookingOpen, setBookingOpen] = useState(false)
-
-  useEffect(() => {
-    const newParticles = Array.from({ length: 20 }, (_, i) => ({
-      id: i,
-      delay: Math.random() * 5,
-      left: Math.random() * 100,
-    }))
-    setParticles(newParticles)
-  }, [])
 
   return (
     <section
@@ -50,12 +19,7 @@ export default function HeroSection() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#C9A84C]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#E8C96A]/5 rounded-full blur-3xl" />
 
-      {/* Floating Particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {particles.map((particle) => (
-          <Particle key={particle.id} delay={particle.delay} left={particle.left} />
-        ))}
-      </div>
+
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
