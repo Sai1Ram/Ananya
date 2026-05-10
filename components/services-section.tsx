@@ -1,7 +1,9 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Sparkles, Crown, Droplets, Waves, CircleDot, Scissors, Gem, GripHorizontal } from "lucide-react"
+import BookingModal from "@/components/booking-modal"
 
 const services = [
   {
@@ -55,6 +57,8 @@ const services = [
 ]
 
 export default function ServicesSection() {
+  const [bookingOpen, setBookingOpen] = useState(false)
+  
   return (
     <section id="services" className="py-28 bg-[#0a0a0a] relative overflow-hidden">
       {/* Decorative background elements */}
@@ -245,13 +249,11 @@ export default function ServicesSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setBookingOpen(true)}
               className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#0a0a0a] transition-all duration-300 group"
             >
-              <span className="font-medium tracking-wide">Enquire Now</span>
+              <span className="font-medium tracking-wide">Book Now</span>
               <svg 
                 className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
                 fill="none" 
@@ -260,9 +262,12 @@ export default function ServicesSection() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </button>
           </div>
         </motion.div>
+
+        {/* Booking Modal */}
+        <BookingModal open={bookingOpen} onOpenChange={setBookingOpen} />
       </div>
     </section>
   )

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
+import BookingModal from "@/components/booking-modal"
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -16,6 +17,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [bookingOpen, setBookingOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,13 +65,12 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="https://wa.me/918280086186"
-              target="_blank"
+            <button
+              onClick={() => setBookingOpen(true)}
               className="bg-[#C9A84C] text-[#0a0a0a] px-6 py-2 rounded-full font-medium hover:bg-[#E8C96A] transition-all duration-300 text-sm"
             >
               Book Now
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,17 +125,22 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                href="https://wa.me/918280086186"
-                target="_blank"
-                className="block bg-[#C9A84C] text-[#0a0a0a] px-6 py-3 rounded-full font-medium text-center hover:bg-[#E8C96A] transition-all duration-300"
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false)
+                  setBookingOpen(true)
+                }}
+                className="block w-full bg-[#C9A84C] text-[#0a0a0a] px-6 py-3 rounded-full font-medium text-center hover:bg-[#E8C96A] transition-all duration-300"
               >
                 Book Now
-              </Link>
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Booking Modal */}
+      <BookingModal open={bookingOpen} onOpenChange={setBookingOpen} />
     </motion.nav>
   )
 }
