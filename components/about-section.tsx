@@ -130,7 +130,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="absolute -bottom-3 -right-3 sm:-right-4 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 bg-[#111] border border-[#C9A84C]/40 px-3 py-2 sm:px-4 sm:py-3 rounded-lg shadow-xl z-10"
+                className="absolute -bottom-3 -right-3 bg-[#111] border border-[#C9A84C]/40 px-3 py-2 sm:px-4 sm:py-3 rounded-lg shadow-xl z-10"
               >
                 <div className="font-serif text-2xl sm:text-3xl text-[#C9A84C]">10+</div>
                 <div className="text-[#a8a8a8] text-[10px] sm:text-xs">Years of Excellence</div>

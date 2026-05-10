@@ -5,8 +5,8 @@ import { motion } from "framer-motion"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import BookingModal from "@/components/booking-modal"
-import { 
-  Sparkles, Crown, Droplets, Waves, CircleDot, Scissors, Gem, 
+import {
+  Sparkles, Crown, Droplets, Waves, CircleDot, Scissors, Gem,
   Heart, Star, Flower2, Sun, Moon, Palette, Brush, Eye, Smile
 } from "lucide-react"
 import Link from "next/link"
@@ -207,18 +207,18 @@ const serviceCategories = [
 
 export default function ServicesPage() {
   const [bookingOpen, setBookingOpen] = useState(false)
-  
+
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#C9A84C]/5 rounded-full blur-[120px]" />
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -238,14 +238,14 @@ export default function ServicesPage() {
               </span>
               <span className="w-12 h-px bg-gradient-to-l from-transparent to-[#C9A84C]" />
             </motion.div>
-            
+
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#F5F0E8] mb-6">
               Premium Beauty{" "}
               <span className="text-[#C9A84C]">Services</span>
             </h1>
-            
+
             <p className="text-[#a8a8a8] max-w-2xl mx-auto text-lg mb-8">
-              Discover our comprehensive range of beauty treatments designed to enhance your natural radiance. 
+              Discover our comprehensive range of beauty treatments designed to enhance your natural radiance.
               From bridal makeup to everyday pampering, we have got you covered.
             </p>
 
@@ -275,8 +275,8 @@ export default function ServicesPage() {
 
       {/* Services Categories */}
       {serviceCategories.map((category, categoryIndex) => (
-        <section 
-          key={category.title} 
+        <section
+          key={category.title}
           className={`py-20 ${categoryIndex % 2 === 0 ? 'bg-[#0a0a0a]' : 'bg-[#111]'}`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -310,7 +310,7 @@ export default function ServicesPage() {
                       {/* Corner accents */}
                       <div className="absolute top-0 left-0 w-6 h-6 border-t border-l border-[#C9A84C]/0 group-hover:border-[#C9A84C] transition-all duration-500" />
                       <div className="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-[#C9A84C]/0 group-hover:border-[#C9A84C] transition-all duration-500" />
-                      
+
                       {/* Popular badge */}
                       {service.popular && (
                         <div className="absolute top-4 right-4 px-2 py-1 bg-[#C9A84C]/10 border border-[#C9A84C]/30 text-[#C9A84C] text-xs tracking-wider uppercase">
@@ -332,9 +332,9 @@ export default function ServicesPage() {
                       <p className="text-[#888] text-sm leading-relaxed mb-4 group-hover:text-[#a8a8a8] transition-colors duration-300">
                         {service.description}
                       </p>
-                      <p className="text-[#C9A84C] font-medium text-sm">
+                      {/* <p className="text-[#C9A84C] font-medium text-sm">
                         {service.price}
-                      </p>
+                      </p> */}
 
                       {/* Decorative line */}
                       <div className="h-[1px] w-12 bg-gradient-to-r from-[#C9A84C] to-transparent mt-4" />
@@ -361,7 +361,7 @@ export default function ServicesPage() {
               <span className="text-[#C9A84C]">Luxury?</span>
             </h2>
             <p className="text-[#a8a8a8] mb-8 max-w-2xl mx-auto">
-              Book your appointment today and let our expert beauticians pamper you with the finest treatments. 
+              Book your appointment today and let our expert beauticians pamper you with the finest treatments.
               Walk in as a guest, leave as a queen.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">

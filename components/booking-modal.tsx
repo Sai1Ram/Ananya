@@ -71,7 +71,7 @@ Please confirm my appointment. Thank you!`
     const whatsappUrl = `https://wa.me/918280086186?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
     onOpenChange(false)
-    
+
     // Reset form
     setFormData({
       name: "",
@@ -103,7 +103,7 @@ Please confirm my appointment. Thank you!`
           />
 
           {/* Gender Select */}
-          <Select
+          {/* <Select
             value={formData.gender}
             onValueChange={(value) => setFormData({ ...formData, gender: value })}
           >
@@ -115,7 +115,7 @@ Please confirm my appointment. Thank you!`
               <SelectItem value="male" className="text-[#F5F0E8] focus:bg-[#C9A84C]/20 focus:text-[#F5F0E8]">Male</SelectItem>
               <SelectItem value="other" className="text-[#F5F0E8] focus:bg-[#C9A84C]/20 focus:text-[#F5F0E8]">Other</SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
 
           {/* Service Select */}
           <Select
@@ -127,8 +127,8 @@ Please confirm my appointment. Thank you!`
             </SelectTrigger>
             <SelectContent className="bg-[#111] border-[#2a2a2a] max-h-[200px]">
               {services.map((service) => (
-                <SelectItem 
-                  key={service} 
+                <SelectItem
+                  key={service}
                   value={service}
                   className="text-[#F5F0E8] focus:bg-[#C9A84C]/20 focus:text-[#F5F0E8]"
                 >
