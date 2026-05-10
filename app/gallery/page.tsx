@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import BookingModal from "@/components/booking-modal"
 import { X } from "lucide-react"
 
 const galleryCategories = [
@@ -91,6 +92,7 @@ const galleryItems = [
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("all")
   const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null)
+  const [bookingOpen, setBookingOpen] = useState(false)
 
   const filteredItems = activeCategory === "all" 
     ? galleryItems 
@@ -265,14 +267,15 @@ export default function GalleryPage() {
                     <h3 className="font-serif text-2xl text-[#F5F0E8] mb-2">{selectedImage.title}</h3>
                     <p className="text-[#a8a8a8]">{selectedImage.description}</p>
                   </div>
-                  <a
-                    href="https://wa.me/919876543210"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => {
+                      setSelectedImage(null)
+                      setBookingOpen(true)
+                    }}
                     className="flex-shrink-0 px-6 py-3 bg-[#C9A84C] text-[#0a0a0a] font-medium hover:bg-[#E8C96A] transition-all duration-300"
                   >
                     Book Similar
-                  </a>
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -338,6 +341,9 @@ export default function GalleryPage() {
       </section>
 
       <Footer />
+
+      {/* Booking Modal */}
+      <BookingModal open={bookingOpen} onOpenChange={setBookingOpen} />
     </main>
   )
 }
