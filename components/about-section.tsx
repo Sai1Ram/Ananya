@@ -124,16 +124,66 @@ export default function AboutSection() {
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
               />
 
-              {/* Experience badge - repositioned for mobile */}
+              {/* Experience badge - premium hexagonal design */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, type: "spring" }}
                 viewport={{ once: true }}
-                className="absolute -bottom-3 -right-3 sm:-right-4 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 bg-[#111] border border-[#C9A84C]/40 px-3 py-2 sm:px-4 sm:py-3 rounded-lg shadow-xl z-10"
+                className="absolute -bottom-6 -right-2 sm:-right-8 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-10"
               >
-                <div className="font-serif text-2xl sm:text-3xl text-[#C9A84C]">10+</div>
-                <div className="text-[#a8a8a8] text-[10px] sm:text-xs">Years of Excellence</div>
+                <div className="relative">
+                  {/* Outer glowing ring */}
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    className="absolute -inset-2 rounded-full opacity-60"
+                    style={{
+                      background: "conic-gradient(from 0deg, #C9A84C, transparent, #E8C96A, transparent, #C9A84C)",
+                    }}
+                  />
+                  
+                  {/* Main badge container */}
+                  <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#C9A84C] flex flex-col items-center justify-center shadow-2xl">
+                    {/* Inner decorative ring */}
+                    <div className="absolute inset-2 rounded-full border border-[#C9A84C]/30" />
+                    
+                    {/* Sparkle accents */}
+                    <motion.div
+                      animate={{ scale: [1, 1.3, 1], opacity: [0.5, 1, 0.5] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="absolute top-2 right-3 w-2 h-2 bg-[#E8C96A] rounded-full blur-[2px]"
+                    />
+                    <motion.div
+                      animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.8, 0.3] }}
+                      transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+                      className="absolute bottom-3 left-2 w-1.5 h-1.5 bg-[#C9A84C] rounded-full blur-[1px]"
+                    />
+                    
+                    {/* Content */}
+                    <motion.div
+                      animate={{ scale: [1, 1.02, 1] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      className="text-center z-10"
+                    >
+                      <div className="font-serif text-3xl sm:text-4xl font-bold bg-gradient-to-b from-[#E8C96A] via-[#C9A84C] to-[#B8943C] bg-clip-text text-transparent leading-none">
+                        10+
+                      </div>
+                      <div className="text-[#C9A84C] text-[8px] sm:text-[9px] tracking-[0.15em] uppercase mt-1 font-medium">
+                        Years of
+                      </div>
+                      <div className="text-[#F5F0E8] text-[9px] sm:text-[10px] tracking-[0.1em] uppercase font-semibold">
+                        Excellence
+                      </div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Award ribbon effect */}
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                    <div className="w-3 h-6 bg-gradient-to-b from-[#C9A84C] to-[#8B7355] transform -skew-x-12 rounded-b-sm" />
+                    <div className="w-3 h-6 bg-gradient-to-b from-[#C9A84C] to-[#8B7355] transform skew-x-12 rounded-b-sm" />
+                  </div>
+                </div>
               </motion.div>
             </div>
           </motion.div>
