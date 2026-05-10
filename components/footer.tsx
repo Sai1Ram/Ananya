@@ -71,7 +71,7 @@ export default function Footer() {
             className="flex items-center gap-6 mb-8"
           >
             <Link
-              href="https://wa.me/1234567890"
+              href="https://wa.me/918280086186"
               target="_blank"
               className="w-10 h-10 border border-[#2a2a2a] flex items-center justify-center text-[#a8a8a8] hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all duration-300"
               aria-label="WhatsApp"

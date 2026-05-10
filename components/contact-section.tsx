@@ -51,7 +51,7 @@ export default function ContactSection() {
               Quick and easy booking through WhatsApp. {"We'll"} respond within minutes!
             </p>
             <Link
-              href="https://wa.me/1234567890?text=Hello! I would like to book an appointment at Ananya Ladies Beauty Spa."
+              href="https://wa.me/918280086186?text=Hello! I would like to book an appointment at Ananya Ladies Beauty Spa."
               target="_blank"
               className="inline-flex items-center gap-2 sm:gap-3 bg-[#25D366] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base hover:bg-[#20bd5a] transition-all duration-300 hover:scale-105"
             >
@@ -101,8 +101,8 @@ export default function ContactSection() {
             <LocationIcon className="w-8 h-8 text-[#C9A84C] mx-auto mb-4" />
             <h4 className="text-[#F5F0E8] font-medium mb-2">Our Location</h4>
             <p className="text-[#a8a8a8] text-sm">
-              123 Beauty Lane, Premium Plaza<br />
-              City Center, State 12345
+              Kamapalli Main Rd, Natabar Nagar 2<br />
+              Kamapalli, Brahmapur, Odisha 760004
             </p>
           </motion.div>
 
@@ -117,8 +117,8 @@ export default function ContactSection() {
             <ClockIcon className="w-8 h-8 text-[#C9A84C] mx-auto mb-4" />
             <h4 className="text-[#F5F0E8] font-medium mb-2">Working Hours</h4>
             <p className="text-[#a8a8a8] text-sm">
-              Mon - Sat: 10:00 AM - 8:00 PM<br />
-              Sunday: By Appointment Only
+              Sunday - Saturday: 10:30 AM - 9:00 PM<br />
+              (Everyday)
             </p>
           </motion.div>
 
@@ -133,8 +133,8 @@ export default function ContactSection() {
             <PhoneIcon className="w-8 h-8 text-[#C9A84C] mx-auto mb-4" />
             <h4 className="text-[#F5F0E8] font-medium mb-2">Call Us</h4>
             <p className="text-[#a8a8a8] text-sm">
-              +91 12345 67890<br />
-              +91 98765 43210
+              Office: +91 8280086186<br />
+              Owner: +91 7008499542
             </p>
           </motion.div>
         </div>

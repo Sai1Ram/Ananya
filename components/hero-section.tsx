@@ -114,7 +114,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 1.1 }}
         >
           <Link
-            href="https://wa.me/1234567890?text=Hello! I would like to book an appointment at Ananya Ladies Beauty Spa."
+            href="https://wa.me/918280086186?text=Hello! I would like to book an appointment at Ananya Ladies Beauty Spa."
             target="_blank"
             className="inline-flex items-center gap-3 bg-[#C9A84C] text-[#0a0a0a] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#E8C96A] transition-all duration-300 hover:scale-105 gold-glow"
           >

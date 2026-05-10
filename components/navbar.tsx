@@ -64,7 +64,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="https://wa.me/1234567890"
+              href="https://wa.me/918280086186"
               target="_blank"
               className="bg-[#C9A84C] text-[#0a0a0a] px-6 py-2 rounded-full font-medium hover:bg-[#E8C96A] transition-all duration-300 text-sm"
             >
@@ -125,7 +125,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="https://wa.me/1234567890"
+                href="https://wa.me/918280086186"
                 target="_blank"
                 className="block bg-[#C9A84C] text-[#0a0a0a] px-6 py-3 rounded-full font-medium text-center hover:bg-[#E8C96A] transition-all duration-300"
               >
