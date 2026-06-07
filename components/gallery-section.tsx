@@ -4,20 +4,20 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const galleryImages = [
-  { id: 1, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-06%20at%2013.49.11-xdx8cHfZ5Y5BjLdZoK6zHymwI4QNcy.jpeg", title: "Bridal Lehenga Portrait" },
-  { id: 2, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-06%20at%2014.14.36-jvfe9Y6ogTvGOJpYWLEFNW2gpOaniU.jpeg", title: "Wine Red Hair Highlights" },
-  { id: 3, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-29%20at%2012.11.01-GnwoZqnlcqvwGfiMWAkSvgCdDkRX0K.jpeg", title: "Henna & Bridal Nails" },
-  { id: 4, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-29%20at%2012.10.58%20%281%29-vir7u0RAlUz9I4beSwz9aEywTF9Dfk.jpeg", title: "Bridal Braided Updo" },
-  { id: 5, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-06%20at%2013.49.12%20%281%29-wiTFjBDzBO8cqhNXjmgcfFJNT8lOE8.jpeg", title: "Bridal Hair with Flower Garland" },
-  { id: 6, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-29%20at%2012.11.00-VS9pUiOYCsep47kAeIpLcz7x0PsF1d.jpeg", title: "Bridal Nail Art Gold Glitter" },
-  { id: 7, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-06%20at%2014.13.50%20%281%29-b71gs2RJ8QI1YWx8SxaAS3nDhKhAwN.jpeg", title: "Bridal Nail Art Pink Sparkle" },
-  { id: 8, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-06%20at%2014.14.37%20%281%29-DN98W7momtgQAAukJvyK25ylcSGeTv.jpeg", title: "Layered Wavy Hair" },
-  { id: 9, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-06%20at%2013.49.12-Q5GL3giMg1CAOohJ1CyfTrkwQq0PuE.jpeg", title: "Traditional Saree Portrait" },
-  { id: 10, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-06%20at%2014.13.51-Z7YHwzjWIYRtVAmO600LukziDBzdKR.jpeg", title: "Henna & Auspicious Display" },
-  { id: 11, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-29%20at%2012.10.58-YHSDZSVwBoRjNVFCTU98iV86zdvELk.jpeg", title: "Bridal Updo with Red Roses" },
-  { id: 12, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-29%20at%2012.10.57-zqqNsUOFohLpxBLBSAmbHuP5NaWy7S.jpeg", title: "Red Bridal Lehenga" },
-  { id: 13, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-06%20at%2014.14.37-hhO4NLMvrEVJeSrUcFrTXStb07SjkP.jpeg", title: "Caramel Highlighted Hair" },
-  { id: 14, image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-06-06%20at%2014.14.36%20%281%29-9XP42hqu6gNTlmkXiqUAOvsTYkH1LP.jpeg", title: "Casual Wavy Hair" },
+  { id: 1, image: "/gallery/bridal-lehenga-portrait.jpg", title: "Bridal Lehenga Portrait" },
+  { id: 2, image: "/gallery/wine-red-highlights.jpg", title: "Wine Red Hair Highlights" },
+  { id: 3, image: "/gallery/henna-bridal-nails.jpg", title: "Henna & Bridal Nails" },
+  { id: 4, image: "/gallery/bridal-braided-updo.jpg", title: "Bridal Braided Updo" },
+  { id: 5, image: "/gallery/bridal-flower-garland.jpg", title: "Bridal Hair with Flower Garland" },
+  { id: 6, image: "/gallery/bridal-gold-glitter-nails.jpg", title: "Bridal Nail Art Gold Glitter" },
+  { id: 7, image: "/gallery/bridal-pink-sparkle-nails.jpg", title: "Bridal Nail Art Pink Sparkle" },
+  { id: 8, image: "/gallery/layered-wavy-hair.jpg", title: "Layered Wavy Hair" },
+  { id: 9, image: "/gallery/traditional-saree-portrait.jpg", title: "Traditional Saree Portrait" },
+  { id: 10, image: "/gallery/henna-auspicious-display.jpg", title: "Henna & Auspicious Display" },
+  { id: 11, image: "/gallery/bridal-updo-red-roses.jpg", title: "Bridal Updo with Red Roses" },
+  { id: 12, image: "/gallery/red-bridal-lehenga.jpg", title: "Red Bridal Lehenga" },
+  { id: 13, image: "/gallery/caramel-highlighted-hair.jpg", title: "Caramel Highlighted Hair" },
+  { id: 14, image: "/gallery/casual-wavy-hair.jpg", title: "Casual Wavy Hair" },
 ]
 
 export default function GallerySection() {
