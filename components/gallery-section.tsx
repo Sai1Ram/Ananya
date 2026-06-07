@@ -2,38 +2,25 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { useState } from "react"
 
-const galleryCategories = {
-  "Bridal Makeup": [
-    { id: 1, image: "/gallery/bridal-lehenga-portrait.jpg", title: "Bridal Lehenga Portrait" },
-    { id: 9, image: "/gallery/traditional-saree-portrait.jpg", title: "Traditional Saree Portrait" },
-    { id: 12, image: "/gallery/red-bridal-lehenga.jpg", title: "Red Bridal Lehenga" },
-  ],
-  "Hair Spa & Treatment": [
-    { id: 2, image: "/gallery/wine-red-highlights.jpg", title: "Wine Red Hair Highlights" },
-    { id: 8, image: "/gallery/layered-wavy-hair.jpg", title: "Layered Wavy Hair" },
-    { id: 13, image: "/gallery/caramel-highlighted-hair.jpg", title: "Caramel Highlighted Hair" },
-    { id: 14, image: "/gallery/casual-wavy-hair.jpg", title: "Casual Wavy Hair" },
-  ],
-  "Bridal Hair": [
-    { id: 4, image: "/gallery/bridal-braided-updo.jpg", title: "Bridal Braided Updo" },
-    { id: 5, image: "/gallery/bridal-flower-garland.jpg", title: "Bridal Hair with Flower Garland" },
-    { id: 11, image: "/gallery/bridal-updo-red-roses.jpg", title: "Bridal Updo with Red Roses" },
-  ],
-  "Bridal Nails & Henna": [
-    { id: 3, image: "/gallery/henna-bridal-nails.jpg", title: "Henna & Bridal Nails" },
-    { id: 6, image: "/gallery/bridal-gold-glitter-nails.jpg", title: "Bridal Nail Art Gold Glitter" },
-    { id: 7, image: "/gallery/bridal-pink-sparkle-nails.jpg", title: "Bridal Nail Art Pink Sparkle" },
-    { id: 10, image: "/gallery/henna-auspicious-display.jpg", title: "Henna & Auspicious Display" },
-  ],
-}
+const galleryImages = [
+  { id: 1, image: "/gallery/bridal-lehenga-portrait.jpg", title: "Bridal Lehenga Portrait" },
+  { id: 2, image: "/gallery/wine-red-highlights.jpg", title: "Wine Red Hair Highlights" },
+  { id: 3, image: "/gallery/henna-bridal-nails.jpg", title: "Henna & Bridal Nails" },
+  { id: 4, image: "/gallery/bridal-braided-updo.jpg", title: "Bridal Braided Updo" },
+  { id: 5, image: "/gallery/bridal-flower-garland.jpg", title: "Bridal Hair with Flower Garland" },
+  { id: 6, image: "/gallery/bridal-gold-glitter-nails.jpg", title: "Bridal Nail Art Gold Glitter" },
+  { id: 7, image: "/gallery/bridal-pink-sparkle-nails.jpg", title: "Bridal Nail Art Pink Sparkle" },
+  { id: 8, image: "/gallery/layered-wavy-hair.jpg", title: "Layered Wavy Hair" },
+  { id: 9, image: "/gallery/traditional-saree-portrait.jpg", title: "Traditional Saree Portrait" },
+  { id: 10, image: "/gallery/henna-auspicious-display.jpg", title: "Henna & Auspicious Display" },
+  { id: 11, image: "/gallery/bridal-updo-red-roses.jpg", title: "Bridal Updo with Red Roses" },
+  { id: 12, image: "/gallery/red-bridal-lehenga.jpg", title: "Red Bridal Lehenga" },
+  { id: 13, image: "/gallery/caramel-highlighted-hair.jpg", title: "Caramel Highlighted Hair" },
+  { id: 14, image: "/gallery/casual-wavy-hair.jpg", title: "Casual Wavy Hair" },
+]
 
 export default function GallerySection() {
-  const [activeCategory, setActiveCategory] = useState<string>("Bridal Makeup")
-  const categories = Object.keys(galleryCategories)
-  const currentImages = galleryCategories[activeCategory as keyof typeof galleryCategories]
-
   return (
     <section id="gallery" className="py-24 bg-[#111] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,37 +41,15 @@ export default function GallerySection() {
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent mx-auto" />
         </motion.div>
 
-        {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 text-sm font-medium tracking-wide transition-all duration-300 border ${
-                activeCategory === category
-                  ? "bg-[#C9A84C] text-[#0a0a0a] border-[#C9A84C]"
-                  : "border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C]/10"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
         {/* Gallery Grid - Masonry Layout */}
-        <motion.div 
-          key={activeCategory}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="columns-2 md:columns-3 gap-4 space-y-4"
-        >
-          {currentImages.map((image, index) => (
+        <div className="columns-2 md:columns-3 gap-4 space-y-4">
+          {galleryImages.map((image, index) => (
             <motion.div
               key={image.id}
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
               className="relative group overflow-hidden border border-[#2a2a2a] break-inside-avoid mb-4"
             >
               {/* Image - using natural aspect ratio */}
@@ -113,7 +78,7 @@ export default function GallerySection() {
               <div className="absolute inset-0 border border-[#C9A84C] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Gallery CTA */}
         <motion.div
