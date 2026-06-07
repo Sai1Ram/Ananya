@@ -5,9 +5,9 @@ import Image from "next/image"
 
 const galleryImages = [
   { id: 1, image: "/gallery/bridal-lehenga-portrait.jpg", title: "Royal Bridal Makeover" },
-  { id: 2, image: "/gallery/wine-red-highlights.jpg", title: "Hair Highlights" },
-  { id: 3, image: "/gallery/henna-bridal-nails.jpg", title: "Henna & Nails" },
-  { id: 4, image: "/gallery/bridal-braided-updo.jpg", title: "Bridal Updo" },
+  { id: 2, image: "/gallery/bridal-flower-garland.jpg", title: "Bridal Hair Styling" },
+  { id: 3, image: "/gallery/caramel-highlighted-hair.jpg", title: "Caramel Highlights" },
+  { id: 4, image: "/gallery/real-bridal-2.jpg", title: "Red Bridal Lehenga" },
   { id: 5, image: "/gallery/traditional-saree-portrait.jpg", title: "Traditional Bridal Makeup" },
   { id: 6, image: "/gallery/bridal-gold-glitter-nails.jpg", title: "Glitter Nails" },
 ]
