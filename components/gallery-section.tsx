@@ -4,20 +4,12 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const galleryImages = [
-  { id: 1, image: "/gallery/bridal-lehenga-portrait.jpg", title: "Bridal Lehenga Portrait" },
-  { id: 2, image: "/gallery/wine-red-highlights.jpg", title: "Wine Red Hair Highlights" },
-  { id: 3, image: "/gallery/henna-bridal-nails.jpg", title: "Henna & Bridal Nails" },
-  { id: 4, image: "/gallery/bridal-braided-updo.jpg", title: "Bridal Braided Updo" },
-  { id: 5, image: "/gallery/bridal-flower-garland.jpg", title: "Bridal Hair with Flower Garland" },
-  { id: 6, image: "/gallery/bridal-gold-glitter-nails.jpg", title: "Bridal Nail Art Gold Glitter" },
-  { id: 7, image: "/gallery/bridal-pink-sparkle-nails.jpg", title: "Bridal Nail Art Pink Sparkle" },
-  { id: 8, image: "/gallery/layered-wavy-hair.jpg", title: "Layered Wavy Hair" },
-  { id: 9, image: "/gallery/traditional-saree-portrait.jpg", title: "Traditional Saree Portrait" },
-  { id: 10, image: "/gallery/henna-auspicious-display.jpg", title: "Henna & Auspicious Display" },
-  { id: 11, image: "/gallery/bridal-updo-red-roses.jpg", title: "Bridal Updo with Red Roses" },
-  { id: 12, image: "/gallery/red-bridal-lehenga.jpg", title: "Red Bridal Lehenga" },
-  { id: 13, image: "/gallery/caramel-highlighted-hair.jpg", title: "Caramel Highlighted Hair" },
-  { id: 14, image: "/gallery/casual-wavy-hair.jpg", title: "Casual Wavy Hair" },
+  { id: 1, image: "/gallery/real-bridal-1.jpg", title: "Bridal Makeup" },
+  { id: 2, image: "/gallery/real-bridal-3.jpg", title: "Elegant Bride" },
+  { id: 3, image: "/gallery/real-party-1.jpg", title: "Party Glam" },
+  { id: 4, image: "/gallery/real-hair-1.jpg", title: "Hair Styling" },
+  { id: 5, image: "/gallery/real-makeup-1.jpg", title: "Traditional" },
+  { id: 6, image: "/gallery/real-makeup-2.webp", title: "South Indian" },
 ]
 
 export default function GallerySection() {
