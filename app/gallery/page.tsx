@@ -13,7 +13,7 @@ const galleryCategories = [
   { id: "bridal", name: "Bridal" },
   { id: "makeup", name: "Makeup" },
   { id: "hair", name: "Hair" },
-  { id: "skincare", name: "Skincare" },
+  { id: "nails", name: "Nail Art" },
 ]
 
 const galleryItems = [
@@ -103,7 +103,7 @@ const galleryItems = [
   },
   {
     id: 13,
-    category: "makeup",
+    category: "nails",
     title: "Henna & Bridal Nails",
     description: "Intricate mehendi with dark red glitter polish",
     image: "/gallery/henna-bridal-nails.jpg",
@@ -124,14 +124,14 @@ const galleryItems = [
   },
   {
     id: 16,
-    category: "makeup",
+    category: "nails",
     title: "Bridal Nail Art Gold Glitter",
     description: "Rose-gold glitter nails with henna designs and jewelry",
     image: "/gallery/bridal-gold-glitter-nails.jpg",
   },
   {
     id: 17,
-    category: "makeup",
+    category: "nails",
     title: "Bridal Nail Art Pink Sparkle",
     description: "Pink sparkly nails with delicate henna patterns",
     image: "/gallery/bridal-pink-sparkle-nails.jpg",
@@ -152,7 +152,7 @@ const galleryItems = [
   },
   {
     id: 20,
-    category: "makeup",
+    category: "nails",
     title: "Henna & Auspicious Display",
     description: "Decorated hands with ornamental Buddha head",
     image: "/gallery/henna-auspicious-display.jpg",

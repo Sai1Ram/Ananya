@@ -4,12 +4,12 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const galleryImages = [
-  { id: 1, image: "/gallery/real-bridal-1.jpg", title: "Bridal Makeup" },
-  { id: 2, image: "/gallery/real-bridal-3.jpg", title: "Elegant Bride" },
-  { id: 3, image: "/gallery/real-party-1.jpg", title: "Party Glam" },
-  { id: 4, image: "/gallery/real-hair-1.jpg", title: "Hair Styling" },
-  { id: 5, image: "/gallery/real-makeup-1.jpg", title: "Traditional" },
-  { id: 6, image: "/gallery/real-makeup-2.webp", title: "South Indian" },
+  { id: 1, image: "/gallery/bridal-lehenga-portrait.jpg", title: "Bridal Lehenga" },
+  { id: 2, image: "/gallery/wine-red-highlights.jpg", title: "Hair Highlights" },
+  { id: 3, image: "/gallery/henna-bridal-nails.jpg", title: "Henna & Nails" },
+  { id: 4, image: "/gallery/bridal-braided-updo.jpg", title: "Bridal Updo" },
+  { id: 5, image: "/gallery/traditional-saree-portrait.jpg", title: "Saree Portrait" },
+  { id: 6, image: "/gallery/bridal-gold-glitter-nails.jpg", title: "Glitter Nails" },
 ]
 
 export default function GallerySection() {
