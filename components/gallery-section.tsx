@@ -4,11 +4,11 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const galleryImages = [
-  { id: 1, image: "/gallery/bridal-lehenga-portrait.jpg", title: "Bridal Lehenga" },
+  { id: 1, image: "/gallery/bridal-lehenga-portrait.jpg", title: "Royal Bridal Makeover" },
   { id: 2, image: "/gallery/wine-red-highlights.jpg", title: "Hair Highlights" },
   { id: 3, image: "/gallery/henna-bridal-nails.jpg", title: "Henna & Nails" },
   { id: 4, image: "/gallery/bridal-braided-updo.jpg", title: "Bridal Updo" },
-  { id: 5, image: "/gallery/traditional-saree-portrait.jpg", title: "Saree Portrait" },
+  { id: 5, image: "/gallery/traditional-saree-portrait.jpg", title: "Traditional Bridal Makeup" },
   { id: 6, image: "/gallery/bridal-gold-glitter-nails.jpg", title: "Glitter Nails" },
 ]
 

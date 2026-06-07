@@ -54,13 +54,15 @@ const serviceCategories = [
     title: "Skin Care Services",
     description: "Professional skincare treatments for radiant, healthy skin",
     services: [
-      { icon: CircleDot, name: "Skin Care with Treatment", description: "Customized facial treatments based on your skin type", popular: true },
+      { icon: Droplets, name: "Hydra Facial", description: "Advanced multi-step facial for deep cleansing, hydration, and glowing skin", popular: true },
+      { icon: Sparkles, name: "Carbon Facial", description: "Laser-based facial treatment for deep exfoliation, skin rejuvenation, and pore tightening", popular: true },
       { icon: Sun, name: "Deep Cleansing for Dehydrated Skin", description: "Intensive hydration and cleansing for dry, dehydrated skin", popular: false },
       { icon: Palette, name: "Exfoliating Treatment for Oily Skin", description: "Deep exfoliation to control oil and refine pores", popular: false },
-      { icon: Moon, name: "Skin Treatment for Dry Skin", description: "Nourishing treatment with moisturizers and hydrating masks", popular: false },
-      { icon: Brush, name: "Skin Treatment for Oily Skin", description: "Balancing treatment to control sebum and mattify skin", popular: false },
-      { icon: Sparkles, name: "Deep Pigmentation Treatment with Laser", description: "Advanced laser treatment for pigmentation and dark spots", popular: true },
-      { icon: Eye, name: "Hyper Pigmentation Treatment", description: "Specialized treatment to fade hyperpigmentation and even skin tone", popular: false },
+      { icon: Sun, name: "Clean-Up", description: "Deep cleansing, exfoliation, and blackhead removal for refreshing skin", popular: false },
+      { icon: Sun, name: "D-Tan Treatment", description: "Effective tan removal treatment for face and body to restore natural skin tone", popular: false },
+      { icon: Flower2, name: "Body Polishing", description: "Full body exfoliation and hydration treatment for smooth, radiant skin", popular: false },
+      { icon: Droplets, name: "Full Body Waxing", description: "Smooth and gentle hair removal for the entire body using premium wax", popular: true },
+      { icon: Scissors, name: "Full Face Threading", description: "Precise hair removal and shaping for eyebrows, upper lip, and face", popular: false },
     ]
   },
   {

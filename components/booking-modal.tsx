@@ -22,35 +22,28 @@ interface BookingModalProps {
   onOpenChange: (open: boolean) => void
 }
 
+const staffs = [
+  "Sunita das",
+  "Kabita Pattnaik",
+  "Sandhya raani sahu",
+  "Khusi",
+]
+
 const services = [
-  "Bridal Makeup",
-  "Pre-Bridal Package",
-  "Engagement Makeup",
-  "Party Makeup",
-  "HD Makeup",
-  "Keratin Treatment",
-  "Hair Spa & Treatment",
-  "Haircut & Styling",
-  "Hair Coloring",
-  "Hair Smoothening",
-  "Gold Facial",
-  "Diamond Facial",
-  "Pearl Facial",
-  "Fruit Facial",
-  "Anti-Aging Facial",
-  "De-Tan Treatment",
-  "Full Body Waxing",
-  "Threading & Waxing",
-  "Body Polishing",
-  "Manicure & Pedicure",
-  "Saree Draping",
+  "Hair Cut", "Hair Styling", "Blow Dry", "Global Color", "Root Touch Up", "Highlight Color", "Shampoo & Conditioning", "Head Massage", "Hair Spa",
+  "Keratin", "Botox", "Smoothening", "Straightening", "Nani Plastic",
+  "Spa Treatment", "Dandruff Treatment", "Scalp Treatment", "Hairfall Factor Treatment with Meso Gun", "Plex Treatment", "Ultimate Repair Treatment",
+  "Hydra Facial", "Carbon Facial", "Deep Cleansing for Dehydrated Skin", "Exfoliating Treatment for Oily Skin", "Clean-Up", "D-Tan Treatment", "Body Polishing", "Full Body Waxing", "Full Face Threading",
+  "Party Makeup", "Engagement Makeup", "Bridal & Groom Makeup", "Reception Makeup", "Hair Styling & Saree Draping",
+  "Nail Extensions", "Gel Paint", "Nail Art",
+  "Pedicure", "Manicure", "Heel Peel Treatment", "Arogyam Foot Therapy with Pedicure"
 ]
 
 export default function BookingModal({ open, onOpenChange }: BookingModalProps) {
   const [formData, setFormData] = useState({
     name: "",
-    gender: "",
     service: "",
+    staff: "",
     date: "",
     time: "",
   })
@@ -61,8 +54,8 @@ export default function BookingModal({ open, onOpenChange }: BookingModalProps) 
 
 *Booking Details:*
 - Name: ${formData.name}
-- Gender: ${formData.gender}
 - Service: ${formData.service}
+- Staff: ${formData.staff}
 - Date: ${formData.date}
 - Time: ${formData.time}
 
@@ -75,14 +68,14 @@ Please confirm my appointment. Thank you!`
     // Reset form
     setFormData({
       name: "",
-      gender: "",
       service: "",
+      staff: "",
       date: "",
       time: "",
     })
   }
 
-  const isFormValid = formData.name && formData.gender && formData.service && formData.date && formData.time
+  const isFormValid = formData.name && formData.service && formData.staff && formData.date && formData.time
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -102,21 +95,6 @@ Please confirm my appointment. Thank you!`
             className="bg-[#111] border-[#2a2a2a] text-[#F5F0E8] placeholder:text-[#666] focus-visible:border-[#C9A84C] focus-visible:ring-[#C9A84C]/20 h-12"
           />
 
-          {/* Gender Select */}
-          {/* <Select
-            value={formData.gender}
-            onValueChange={(value) => setFormData({ ...formData, gender: value })}
-          >
-            <SelectTrigger className="bg-[#111] border-[#2a2a2a] text-[#F5F0E8] h-12 w-full data-[placeholder]:text-[#666] focus:border-[#C9A84C] focus:ring-[#C9A84C]/20">
-              <SelectValue placeholder="Select Gender" />
-            </SelectTrigger>
-            <SelectContent className="bg-[#111] border-[#2a2a2a]">
-              <SelectItem value="female" className="text-[#F5F0E8] focus:bg-[#C9A84C]/20 focus:text-[#F5F0E8]">Female</SelectItem>
-              <SelectItem value="male" className="text-[#F5F0E8] focus:bg-[#C9A84C]/20 focus:text-[#F5F0E8]">Male</SelectItem>
-              <SelectItem value="other" className="text-[#F5F0E8] focus:bg-[#C9A84C]/20 focus:text-[#F5F0E8]">Other</SelectItem>
-            </SelectContent>
-          </Select> */}
-
           {/* Service Select */}
           <Select
             value={formData.service}
@@ -133,6 +111,27 @@ Please confirm my appointment. Thank you!`
                   className="text-[#F5F0E8] focus:bg-[#C9A84C]/20 focus:text-[#F5F0E8]"
                 >
                   {service}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+
+          {/* Staff Select */}
+          <Select
+            value={formData.staff}
+            onValueChange={(value) => setFormData({ ...formData, staff: value })}
+          >
+            <SelectTrigger className="bg-[#111] border-[#2a2a2a] text-[#F5F0E8] h-12 w-full data-[placeholder]:text-[#666] focus:border-[#C9A84C] focus:ring-[#C9A84C]/20">
+              <SelectValue placeholder="Select Staff Member" />
+            </SelectTrigger>
+            <SelectContent className="bg-[#111] border-[#2a2a2a]">
+              {staffs.map((staff) => (
+                <SelectItem
+                  key={staff}
+                  value={staff}
+                  className="text-[#F5F0E8] focus:bg-[#C9A84C]/20 focus:text-[#F5F0E8]"
+                >
+                  {staff}
                 </SelectItem>
               ))}
             </SelectContent>

@@ -26,9 +26,9 @@ const galleryItems = [
   },
   {
     id: 2,
-    category: "bridal",
-    title: "Elegant Pink Bride",
-    description: "Beautiful bridal look in pink lehenga with delicate jewelry",
+    category: "makeup",
+    title: "Elegant Pink Bridal Glam",
+    description: "Soft glam bridal makeup paired with an elegant pink lehenga and diamond jewelry",
     image: "/gallery/real-bridal-3.jpg",
   },
   {
@@ -89,9 +89,9 @@ const galleryItems = [
   },
   {
     id: 11,
-    category: "bridal",
-    title: "Bridal Lehenga Portrait",
-    description: "Stunning turquoise mint-green lehenga with ornate background",
+    category: "makeup",
+    title: "Royal Bridal Makeover",
+    description: "Intricate royal bridal makeup with a premium mint-green lehenga and gold jewelry",
     image: "/gallery/bridal-lehenga-portrait.jpg",
   },
   {
@@ -145,9 +145,9 @@ const galleryItems = [
   },
   {
     id: 19,
-    category: "bridal",
-    title: "Traditional Saree Portrait",
-    description: "Woman in cream saree with pearl choker necklace",
+    category: "makeup",
+    title: "Traditional Bridal Makeup",
+    description: "Elegant traditional makeup paired with a meticulously draped silk saree and jewelry",
     image: "/gallery/traditional-saree-portrait.jpg",
   },
   {

@@ -2,56 +2,56 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Sparkles, Crown, Droplets, Waves, CircleDot, Scissors, Gem, GripHorizontal } from "lucide-react"
+import { Sparkles, Crown, Droplets, Waves, CircleDot, Scissors, Gem, Palette, Star } from "lucide-react"
 import BookingModal from "@/components/booking-modal"
 
 const services = [
   {
     icon: Crown,
-    title: "Bridal Makeup",
-    description: "Complete bridal transformation with premium products for your special day",
+    title: "Bridal & Groom Makeup",
+    description: "Complete premium bridal and groom makeup packages for your special day",
     highlight: true,
   },
   {
-    icon: Sparkles,
-    title: "Party Makeup",
-    description: "Glamorous looks for any occasion, from subtle elegance to bold statements",
+    icon: Palette,
+    title: "Global & Highlight Color",
+    description: "Vibrant global coloring and dimensional highlights using premium brands",
     highlight: false,
   },
   {
     icon: Droplets,
-    title: "Hair Spa & Treatment",
-    description: "Rejuvenating hair therapies for healthy, lustrous locks",
+    title: "Spa & Hairfall Treatment",
+    description: "Deep conditioning hair spas and advanced hair fall control treatments",
     highlight: false,
   },
   {
     icon: Waves,
-    title: "Keratin/Smoothening",
-    description: "Professional hair smoothening for silky, manageable hair",
+    title: "Keratin & Botox Treatment",
+    description: "Professional smoothing and repair treatments for silky, frizz-free hair",
     highlight: false,
   },
   {
     icon: CircleDot,
-    title: "Facial & Skincare",
-    description: "Luxurious facials and treatments for radiant, glowing skin",
+    title: "Skin Care & Facials",
+    description: "Premium Hydra Facials, Carbon Facials, and customized clean-ups for flawless skin",
     highlight: false,
   },
   {
     icon: Scissors,
-    title: "Threading & Waxing",
-    description: "Precise and gentle hair removal services for flawless finish",
+    title: "Hair Cut & Styling",
+    description: "Trendy cuts and creative hair styling tailored to your unique personality",
     highlight: false,
   },
   {
-    icon: GripHorizontal,
-    title: "Saree Draping",
-    description: "Expert saree draping in various styles for the perfect traditional look",
+    icon: Star,
+    title: "Nails & Pampering",
+    description: "Premium nail extensions, creative nail art, and gel paint applications",
     highlight: false,
   },
   {
     icon: Gem,
-    title: "Pre-Bridal Package",
-    description: "Complete preparation packages to make you wedding-ready",
+    title: "Body Polish & Waxing",
+    description: "Luxurious full body waxing, body polishing, and D-Tan treatments to rejuvenate your skin",
     highlight: true,
   },
 ]
