@@ -63,7 +63,7 @@ export default function PageLoader() {
               />
               <Image
                 src="/images/logo.jpg"
-                alt="Ananya Ladies Beauty Spa"
+                alt="Ananya Ladies Salon and Makeup Studio"
                 width={100}
                 height={100}
                 className="rounded-full relative z-10 border-2 border-[#C9A84C]/30"

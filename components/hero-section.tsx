@@ -85,7 +85,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-[#C9A84C] text-lg md:text-xl tracking-[0.3em] uppercase mb-4"
         >
-          Ladies Beauty Spa
+          Ladies Salon and Makeup Studio
         </motion.p>
 
         {/* Tagline */}

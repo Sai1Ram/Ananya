@@ -44,7 +44,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/images/logo.jpg"
-              alt="Ananya Ladies Beauty Spa"
+              alt="Ananya Ladies Salon and Makeup Studio"
               width={50}
               height={50}
               className="rounded-full"

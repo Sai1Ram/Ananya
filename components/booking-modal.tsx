@@ -50,7 +50,7 @@ export default function BookingModal({ open, onOpenChange }: BookingModalProps) 
 
   const handleSubmit = () => {
     // Build WhatsApp message with booking details
-    const message = `Hello! I would like to book an appointment at Ananya Ladies Beauty Spa.
+    const message = `Hello! I would like to book an appointment at Ananya Ladies Salon and Makeup Studio.
 
 *Booking Details:*
 - Name: ${formData.name}

@@ -105,7 +105,7 @@ export default function AboutSection() {
                 <div className="absolute inset-2 rounded-full overflow-hidden">
                   <Image
                     src="/images/logo.jpg"
-                    alt="Ananya Ladies Beauty Spa"
+                    alt="Ananya Ladies Salon and Makeup Studio"
                     fill
                     className="object-cover"
                   />
@@ -151,7 +151,7 @@ export default function AboutSection() {
               <p className="text-lg md:text-xl text-[#F5F0E8]/90 leading-relaxed font-light">
                 Welcome to{" "}
                 <span className="text-[#C9A84C] font-medium">
-                  Ananya Ladies Beauty Spa
+                  Ananya Ladies Salon and Makeup Studio
                 </span>{" "}
                 — a sanctuary of elegance exclusively designed for women who
                 deserve nothing but the finest in beauty and self-care.

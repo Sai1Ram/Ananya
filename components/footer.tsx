@@ -21,7 +21,7 @@ export default function Footer() {
           >
             <Image
               src="/images/logo.jpg"
-              alt="Ananya Ladies Beauty Spa"
+              alt="Ananya Ladies Salon and Makeup Studio"
               width={60}
               height={60}
               className="rounded-full"
@@ -46,7 +46,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-[#a8a8a8] text-sm mb-2"
           >
-            Ladies Beauty Spa
+            Ladies Salon and Makeup Studio
           </motion.p>
 
           <motion.p
@@ -123,7 +123,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-[#666] text-xs text-center"
           >
-            © {currentYear} Ananya Ladies Beauty Spa. All rights reserved.
+            © {currentYear} Ananya Ladies Salon and Makeup Studio. All rights reserved.
           </motion.p>
         </div>
       </div>

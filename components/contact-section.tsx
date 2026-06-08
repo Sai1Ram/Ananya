@@ -51,7 +51,7 @@ export default function ContactSection() {
               Quick and easy booking through WhatsApp. {"We'll"} respond within minutes!
             </p>
             <Link
-              href="https://wa.me/918280086186?text=Hello! I would like to book an appointment at Ananya Ladies Beauty Spa."
+              href="https://wa.me/918280086186?text=Hello! I would like to book an appointment at Ananya Ladies Salon and Makeup Studio."
               target="_blank"
               className="inline-flex items-center gap-2 sm:gap-3 bg-[#25D366] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base hover:bg-[#20bd5a] transition-all duration-300 hover:scale-105"
             >

@@ -16,7 +16,7 @@ const raleway = Raleway({
 })
 
 export const metadata: Metadata = {
-  title: 'Ananya Ladies Beauty Spa | Luxury Bridal Makeup & Hair Treatments',
+  title: 'Ananya Ladies Salon and Makeup Studio | Luxury Bridal Makeup & Hair Treatments',
   description: 'Premium ladies-only spa specializing in bridal makeup, hair treatments, skincare, and beauty services. Where every woman is a bride.',
   keywords: 'bridal makeup, ladies spa, beauty salon, hair treatment, skincare, bridal package',
 }
