@@ -16,18 +16,12 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Calendar, Clock } from "lucide-react"
+import { WHATSAPP_NUMBER, STAFF_MEMBERS } from "@/lib/constants"
 
 interface BookingModalProps {
   open: boolean
   onOpenChange: (open: boolean) => void
 }
-
-const staffs = [
-  "Sunita das",
-  "Kabita Pattnaik",
-  "Sandhya raani sahu",
-  "Khusi",
-]
 
 const services = [
   "Hair Cut", "Hair Styling", "Blow Dry", "Global Color", "Root Touch Up", "Highlight Color", "Shampoo & Conditioning", "Head Massage", "Hair Spa",
@@ -61,7 +55,7 @@ export default function BookingModal({ open, onOpenChange }: BookingModalProps) 
 
 Please confirm my appointment. Thank you!`
 
-    const whatsappUrl = `https://wa.me/918280086186?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
     onOpenChange(false)
 
@@ -101,9 +95,11 @@ Please confirm my appointment. Thank you!`
             onValueChange={(value) => setFormData({ ...formData, service: value })}
           >
             <SelectTrigger className="bg-[#111] border-[#2a2a2a] text-[#F5F0E8] h-12 w-full data-[placeholder]:text-[#666] focus:border-[#C9A84C] focus:ring-[#C9A84C]/20">
-              <SelectValue placeholder="Select a Service" />
+              <SelectValue placeholder="Select a Service">
+                {formData.service}
+              </SelectValue>
             </SelectTrigger>
-            <SelectContent className="bg-[#111] border-[#2a2a2a] max-h-[200px]">
+            <SelectContent className="bg-[#111] border-[#2a2a2a] max-h-[250px]">
               {services.map((service) => (
                 <SelectItem
                   key={service}
@@ -122,16 +118,23 @@ Please confirm my appointment. Thank you!`
             onValueChange={(value) => setFormData({ ...formData, staff: value })}
           >
             <SelectTrigger className="bg-[#111] border-[#2a2a2a] text-[#F5F0E8] h-12 w-full data-[placeholder]:text-[#666] focus:border-[#C9A84C] focus:ring-[#C9A84C]/20">
-              <SelectValue placeholder="Select Staff Member" />
+              <SelectValue placeholder="Select Staff Member">
+                {formData.staff}
+              </SelectValue>
             </SelectTrigger>
             <SelectContent className="bg-[#111] border-[#2a2a2a]">
-              {staffs.map((staff) => (
+              {STAFF_MEMBERS.map((staff) => (
                 <SelectItem
-                  key={staff}
-                  value={staff}
-                  className="text-[#F5F0E8] focus:bg-[#C9A84C]/20 focus:text-[#F5F0E8]"
+                  key={staff.name}
+                  value={staff.name}
+                  className="text-[#F5F0E8] focus:bg-[#C9A84C]/20 focus:text-[#F5F0E8] py-2"
                 >
-                  {staff}
+                  <div className="flex flex-col items-start text-left">
+                    <span className="text-sm font-medium text-[#F5F0E8]">{staff.name}</span>
+                    <span className="text-[10px] text-[#C9A84C] tracking-widest uppercase mt-0.5 font-light">
+                      {staff.specialization}
+                    </span>
+                  </div>
                 </SelectItem>
               ))}
             </SelectContent>

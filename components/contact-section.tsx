@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { WHATSAPP_NUMBER, DISPLAY_PHONE_NUMBER, DISPLAY_OWNER_PHONE_NUMBER } from "@/lib/constants"
 
 export default function ContactSection() {
   return (
@@ -51,7 +52,7 @@ export default function ContactSection() {
               Quick and easy booking through WhatsApp. {"We'll"} respond within minutes!
             </p>
             <Link
-              href="https://wa.me/918280086186?text=Hello! I would like to book an appointment at Ananya Ladies Salon and Makeup Studio."
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello! I would like to book an appointment at Ananya Ladies Salon and Makeup Studio.`}
               target="_blank"
               className="inline-flex items-center gap-2 sm:gap-3 bg-[#25D366] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base hover:bg-[#20bd5a] transition-all duration-300 hover:scale-105"
             >
@@ -133,8 +134,8 @@ export default function ContactSection() {
             <PhoneIcon className="w-8 h-8 text-[#C9A84C] mx-auto mb-4" />
             <h4 className="text-[#F5F0E8] font-medium mb-2">Call Us</h4>
             <p className="text-[#a8a8a8] text-sm">
-              Office: +91 8280086186<br />
-              Owner: +91 7008499542
+              Office: {DISPLAY_PHONE_NUMBER}<br />
+              Owner: {DISPLAY_OWNER_PHONE_NUMBER}
             </p>
           </motion.div>
         </div>

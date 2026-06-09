@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
+import { WHATSAPP_NUMBER } from "@/lib/constants"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -71,7 +72,7 @@ export default function Footer() {
             className="flex items-center gap-6 mb-8"
           >
             <Link
-              href="https://wa.me/918280086186"
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               className="w-10 h-10 border border-[#2a2a2a] flex items-center justify-center text-[#a8a8a8] hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all duration-300"
               aria-label="WhatsApp"
