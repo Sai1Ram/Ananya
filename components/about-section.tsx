@@ -91,36 +91,10 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="lg:col-span-5"
           >
-            <div className="relative max-w-md mx-auto">
-              {/* Outer glow effect */}
-              <motion.div
-                className="absolute inset-0 rounded-2xl"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(201, 168, 76, 0.2), transparent)",
-                }}
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
-
-              {/* Rotating border frame */}
-              <motion.div
-                className="absolute inset-[-2px] rounded-2xl"
-                style={{
-                  background:
-                    "conic-gradient(from 0deg, #C9A84C, #E8C96A, #C9A84C)",
-                }}
-                animate={{ rotate: 360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              />
-
-              {/* Inner border for depth */}
-              <motion.div
-                className="absolute inset-1 rounded-xl border border-[#C9A84C]/20"
-                animate={{ opacity: [0.3, 0.6, 0.3] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
-
+            <div className="relative max-w-md mx-auto p-1 bg-gradient-to-br from-[#E8C96A] to-[#C9A84C] rounded-xl">
+              {/* Rotating border animation wrapper */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#E8C96A] to-[#C9A84C] opacity-0 animate-spin" style={{ animationDuration: '15s' }} />
+              
               {/* Main video container */}
               <div className="relative overflow-hidden rounded-xl bg-[#111] aspect-video">
                 {isPlaying ? (
@@ -155,18 +129,6 @@ export default function AboutSection() {
                   </>
                 )}
               </div>
-
-              {/* Decorative accent lines */}
-              <motion.div
-                className="absolute top-0 left-8 w-12 h-0.5 bg-gradient-to-r from-transparent to-[#C9A84C]"
-                animate={{ opacity: [0.3, 0.8, 0.3] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-              />
-              <motion.div
-                className="absolute bottom-0 right-8 w-12 h-0.5 bg-gradient-to-l from-transparent to-[#E8C96A]"
-                animate={{ opacity: [0.3, 0.8, 0.3] }}
-                transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
-              />
 
               {/* Experience badge */}
               <motion.div
