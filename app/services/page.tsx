@@ -63,6 +63,7 @@ const serviceCategories = [
       { icon: Flower2, name: "Body Polishing", description: "Full body exfoliation and hydration treatment for smooth, radiant skin", popular: false },
       { icon: Droplets, name: "Full Body Waxing", description: "Smooth and gentle hair removal for the entire body using premium wax", popular: true },
       { icon: Scissors, name: "Full Face Threading", description: "Precise hair removal and shaping for eyebrows, upper lip, and face", popular: false },
+      { icon: Eye, name: "Microblading Eyebrows", description: "Semi-permanent eyebrow microblading for perfectly shaped, natural-looking brows", popular: true },
     ]
   },
   {

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Sparkles, Crown, Droplets, Waves, CircleDot, Scissors, Gem, Palette, Star } from "lucide-react"
+import { Sparkles, Crown, Droplets, Waves, CircleDot, Scissors, Gem, Palette, Star, Eye } from "lucide-react"
 import BookingModal from "@/components/booking-modal"
 
 const services = [
@@ -53,6 +53,12 @@ const services = [
     title: "Body Polish & Waxing",
     description: "Luxurious full body waxing, body polishing, and D-Tan treatments to rejuvenate your skin",
     highlight: true,
+  },
+  {
+    icon: Eye,
+    title: "Microblading Eyebrows",
+    description: "Semi-permanent eyebrow microblading for perfectly shaped, natural-looking brows",
+    highlight: false,
   },
 ]
 
