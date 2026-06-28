@@ -2,9 +2,12 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Sparkles, Award, Heart, Clock } from "lucide-react"
+import { Sparkles, Award, Heart, Clock, Play } from "lucide-react"
+import { useState } from "react"
 
 export default function AboutSection() {
+  const [isPlaying, setIsPlaying] = useState(false)
+
   const features = [
     {
       icon: Sparkles,
@@ -80,7 +83,7 @@ export default function AboutSection() {
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left column - Logo showcase */}
+          {/* Left column - Video showcase */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -88,52 +91,93 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="lg:col-span-5"
           >
-            <div className="relative max-w-sm mx-auto">
-              {/* Rotating border */}
+            <div className="relative max-w-md mx-auto">
+              {/* Outer glow effect */}
               <motion.div
-                className="absolute inset-[-3px] rounded-full"
+                className="absolute inset-0 rounded-2xl"
                 style={{
                   background:
-                    "conic-gradient(from 0deg, transparent, #C9A84C, transparent, #E8C96A, transparent)",
+                    "radial-gradient(circle, rgba(201, 168, 76, 0.2), transparent)",
                 }}
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              />
-
-              {/* Main logo container */}
-              <div className="relative aspect-square rounded-full bg-[#0a0a0a] p-2 overflow-hidden">
-                <div className="absolute inset-2 rounded-full overflow-hidden">
-                  <Image
-                    src="/images/logo.jpg"
-                    alt="Ananya Ladies Salon and Makeup Studio"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Floating decorative elements */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-16 h-16 border border-[#C9A84C]/30 rounded-full"
-                animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.6, 0.3] }}
+                animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
+
+              {/* Rotating border frame */}
               <motion.div
-                className="absolute -bottom-6 -left-6 w-24 h-24 border border-[#E8C96A]/20 rounded-full"
-                animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.5, 0.2] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+                className="absolute inset-[-2px] rounded-2xl"
+                style={{
+                  background:
+                    "conic-gradient(from 0deg, #C9A84C, #E8C96A, #C9A84C)",
+                }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
               />
 
-              {/* Experience badge - repositioned for mobile */}
+              {/* Inner border for depth */}
+              <motion.div
+                className="absolute inset-1 rounded-xl border border-[#C9A84C]/20"
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
+
+              {/* Main video container */}
+              <div className="relative overflow-hidden rounded-xl bg-[#111] aspect-video">
+                {isPlaying ? (
+                  <video
+                    src="/video/Video Project 1_compress.mp4"
+                    autoPlay
+                    controls
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <>
+                    <video
+                      src="/video/Video Project 1_compress.mp4"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Play button overlay */}
+                    <button
+                      onClick={() => setIsPlaying(true)}
+                      className="absolute inset-0 flex items-center justify-center group cursor-pointer"
+                    >
+                      <motion.div
+                        className="flex items-center justify-center"
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <div className="absolute inset-0 bg-[#C9A84C]/10 rounded-full blur-xl group-hover:bg-[#C9A84C]/20 transition-colors" />
+                        <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-[#E8C96A] to-[#C9A84C] flex items-center justify-center shadow-2xl">
+                          <Play className="w-8 h-8 text-[#0a0a0a] fill-current ml-1" />
+                        </div>
+                      </motion.div>
+                    </button>
+                  </>
+                )}
+              </div>
+
+              {/* Decorative accent lines */}
+              <motion.div
+                className="absolute top-0 left-8 w-12 h-0.5 bg-gradient-to-r from-transparent to-[#C9A84C]"
+                animate={{ opacity: [0.3, 0.8, 0.3] }}
+                transition={{ duration: 2.5, repeat: Infinity }}
+              />
+              <motion.div
+                className="absolute bottom-0 right-8 w-12 h-0.5 bg-gradient-to-l from-transparent to-[#E8C96A]"
+                animate={{ opacity: [0.3, 0.8, 0.3] }}
+                transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+              />
+
+              {/* Experience badge */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="absolute -bottom-3 -right-3 bg-[#111] border border-[#C9A84C]/40 px-3 py-2 sm:px-4 sm:py-3 rounded-lg shadow-xl z-10"
+                className="absolute -bottom-4 -right-4 bg-[#111] border border-[#C9A84C]/40 px-4 py-3 rounded-xl shadow-2xl z-10"
               >
-                <div className="font-serif text-2xl sm:text-3xl text-[#C9A84C]">10+</div>
-                <div className="text-[#a8a8a8] text-[10px] sm:text-xs">Years of Excellence</div>
+                <div className="font-serif text-3xl text-[#C9A84C]">10+</div>
+                <div className="text-[#a8a8a8] text-xs">Years of Excellence</div>
               </motion.div>
             </div>
           </motion.div>
