@@ -2,11 +2,34 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Sparkles, Award, Heart, Clock, Play } from "lucide-react"
-import { useState } from "react"
+import { Sparkles, Award, Heart, Clock } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
 
 export default function AboutSection() {
-  const [isPlaying, setIsPlaying] = useState(false)
+  const [hasAutoPlayed, setHasAutoPlayed] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAutoPlayed && videoRef.current) {
+          videoRef.current.play()
+          setHasAutoPlayed(true)
+        }
+      },
+      { threshold: 0.5 }
+    )
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current)
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current)
+      }
+    }
+  }, [hasAutoPlayed])
 
   const features = [
     {
@@ -96,51 +119,15 @@ export default function AboutSection() {
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#E8C96A] to-[#C9A84C] opacity-0 animate-spin" style={{ animationDuration: '15s' }} />
               
               {/* Main video container */}
-              <div className="relative overflow-hidden rounded-xl bg-[#111] aspect-video">
-                {isPlaying ? (
-                  <video
-                    src="/video/Video Project 1_compress.mp4"
-                    autoPlay
-                    controls
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <>
-                    <video
-                      src="/video/Video Project 1_compress.mp4"
-                      className="w-full h-full object-cover"
-                    />
-                    {/* Play button overlay */}
-                    <button
-                      onClick={() => setIsPlaying(true)}
-                      className="absolute inset-0 flex items-center justify-center group cursor-pointer"
-                    >
-                      <motion.div
-                        className="flex items-center justify-center"
-                        initial={{ scale: 1 }}
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <div className="absolute inset-0 bg-[#C9A84C]/10 rounded-full blur-xl group-hover:bg-[#C9A84C]/20 transition-colors" />
-                        <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-[#E8C96A] to-[#C9A84C] flex items-center justify-center shadow-2xl">
-                          <Play className="w-8 h-8 text-[#0a0a0a] fill-current ml-1" />
-                        </div>
-                      </motion.div>
-                    </button>
-                  </>
-                )}
+              <div className="relative overflow-hidden rounded-xl bg-[#111] h-96">
+                <video
+                  ref={videoRef}
+                  src="/video/Video Project 1_compress.mp4"
+                  controls
+                  muted
+                  className="w-full h-full object-cover"
+                />
               </div>
-
-              {/* Experience badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="absolute -bottom-4 -right-4 bg-[#111] border border-[#C9A84C]/40 px-4 py-3 rounded-xl shadow-2xl z-10"
-              >
-                <div className="font-serif text-3xl text-[#C9A84C]">10+</div>
-                <div className="text-[#a8a8a8] text-xs">Years of Excellence</div>
-              </motion.div>
             </div>
           </motion.div>
 
